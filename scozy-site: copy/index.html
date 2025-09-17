@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>$SCOZY — The Living Room of Crypto</title>
+  <meta name="description" content="$SCOZY is a community-first Solana token with a clear plan: fair launch, transparent treasury, sustainable rewards, and a path to governance and utility." />
+
+  <!-- SEO / Social -->
+  <meta property="og:title" content="$SCOZY — The Living Room of Crypto" />
+  <meta property="og:description" content="Fair launch. Transparent treasury. Community-first on Solana." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scozycoin.com/" />
+  <meta property="og:image" content="images/og-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="$SCOZY — The Living Room of Crypto" />
+  <meta name="twitter:description" content="Fair launch. Transparent treasury. Community-first on Solana." />
+  <meta name="twitter:image" content="images/og-preview.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/hero-cozy.png" type="image/png">
+
+  <style>
+    :root{
+      --cream:#FAF3E0; --cocoa:#6B3E2E; --teal:#2A9D8F; --peach:#F4A261; --mustard:#E9C46A; --charcoal:#2F2F2F;
+      --maxw:1200px;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--charcoal);font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:18px;line-height:1.6}
+    h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;color:var(--cocoa);line-height:1.2;margin:0 0 12px}
+    h1{font-size:clamp(36px,6vw,60px)} h2{font-size:clamp(28px,4.6vw,40px)} h3{font-size:clamp(20px,3.2vw,26px)}
+    p{margin:0 0 16px} a{color:var(--teal);text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    section{padding:96px 0}
+    .btn{display:inline-block;padding:14px 22px;border-radius:16px;background:var(--teal);color:#fff;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.06);transition:.2s}
+    .btn:hover{background:var(--peach);color:var(--cocoa);transform:translateY(-1px)}
+    .btn.secondary{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+    .grid-2{display:grid;gap:40px;grid-template-columns:1fr}
+    @media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}}
+    .card{background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:24px}
+    .kicker{color:var(--teal);font-weight:700;letter-spacing:.4px;text-transform:uppercase;margin-bottom:8px}
+    .facts{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .fact{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+    .pill{display:inline-block;padding:6px 12px;border-radius:999px;background:#fff;margin-right:6px;box-shadow:0 6px 16px rgba(0,0,0,.06);color:var(--cocoa);font-weight:700}
+    .cols-3{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .bar{height:4px;width:60px;background:var(--mustard);border-radius:2px;margin:8px 0 12px}
+    .list-clean{list-style:none;padding:0;margin:0}
+    .list-clean li{margin:10px 0}
+    .note{font-size:.95rem;color:#555}
+    .muted{color:#5a514d}
+    .hero img{max-width:100%;height:auto;display:block;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+    .badge{font-size:.95rem;background:#fff;padding:10px 14px;border-radius:12px;display:inline-flex;gap:8px;align-items:center;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+
+    /* Tokenomics */
+    .tok-layout{display:grid;gap:40px;grid-template-columns:1fr}
+    @media(min-width:1000px){.tok-layout{grid-template-columns:1fr 1fr}}
+    .tok-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .tok-card{background:#fff;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.06);padding:18px}
+    .tok-card h4{margin:0 0 6px;font-size:1.05rem;color:var(--teal)}
+    .legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin:0 4px -2px 8px}
+    .sw-teal{background:#2A9D8F}.sw-peach{background:#F4A261}.sw-mustard{background:#E9C46A}.sw-cocoa{background:#6B3E2E}.sw-gray{background:#BFBFBF}
+
+    /* Transparency Hub */
+    .wallets{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:24px}
+    .wallet-card{background:#fff;border-radius:12px;padding:16px 18px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .wallet-card h3{margin:0 0 10px;color:#2A9D8F}
+    .wallet-card .row{margin:6px 0}
+    .wallet-card .status{font-size:.9rem;margin-left:8px;padding:2px 8px;border-radius:999px;background:#eee;color:#444}
+    .status.ok{background:#E5F8F3;color:#17624E}
+    .status.warn{background:#FFF6E5;color:#7A4B00}
+    .status.err{background:#FDECEC;color:#8A1E1E}
+    .wallet-card .txs summary{cursor:pointer;margin-top:10px}
+    .wallet-card .txs ul{list-style:none;padding:8px 0 0;margin:0}
+    .wallet-card .txs li{font-size:14px;margin:6px 0}
+    .wallet-card .txs a{color:#6B3E2E;text-decoration:underline}
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero" style="padding:120px 0 80px">
+    <div class="wrap grid-2">
+      <div>
+        <div class="kicker">Welcome Home</div>
+        <h1>$SCOZY — The Living Room of Crypto</h1>
+        <p>We’re building a fair, transparent, and genuinely cozy corner of Solana—where culture comes first, and utility arrives step-by-step.</p>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="https://t.me/SCOZYCOIN" target="_blank" rel="noopener">Join the Cozy Crew</a>
+          <a class="btn secondary" href="https://web.telegram.org/k/#@SCOZYCOIN" target="_blank" rel="noopener">Open in Browser</a>
+        </div>
+        <div style="margin-top:14px">
+          <span class="pill">Fair Launch</span><span class="pill">Transparent Treasury</span><span class="pill">Community-First</span>
+        </div>
+      </div>
+      <div>
+        <img src="images/hero-cozy.png" alt="Cozy Bear, $SCOZY mascot, in a warm retro living room">
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK FACTS -->
+  <section aria-labelledby="facts">
+    <div class="wrap">
+      <div class="facts" id="facts">
+        <div class="fact"><b>Chain</b><br>Solana (SPL)</div>
+        <div class="fact"><b>Status</b><br>Pre-launch — site & community build-out</div>
+        <div class="fact"><b>Supply</b><br>1,000,000,000 $SCOZY</div>
+        <div class="fact"><b>Focus</b><br>Trust → Utility → Governance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SCOZY -->
+  <section>
+    <div class="wrap grid-2">
+      <div>
+        <h2>What Makes $SCOZY Different</h2>
+        <p><b>We start where most projects end: with trust.</b> $SCOZY is a culture-first token designed to be held with confidence. Instead of sprinting into complex features, we stage growth deliberately—so every new step has a purpose and budget behind it.</p>
+        <ul class="list-clean">
+          <li>• <b>Fairness:</b> majority to liquidity, no presale, no insider bags.</li>
+          <li>• <b>Clarity:</b> a written plan for utility, treasury, and governance.</li>
+          <li>• <b>Comfort:</b> branding and community rituals that people actually enjoy.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>How We’ll Add Real Value</h3>
+        <p>Utility that compounds over time:</p>
+        <ul class="list-clean">
+          <li>• Holder-only perks (channels, raffles, allowlists).</li>
+          <li>• Staking from a fixed rewards pool (sustainable, not infinite inflation).</li>
+          <li>• Charity impact with community voting.</li>
+          <li>• Select integrations.</li>
+        </ul>
+        <p class="note">We ship useful, scoped features—not promises we can’t fund.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section id="tokenomics">
+    <div class="wrap">
+      <h2>$SCOZY Tokenomics</h2>
+      <div class="tok-layout">
+        <div>
+          <img src="images/scozy_bear_tokenomics.png" alt="$SCOZY Tokenomics — Cozy Bear pointing at a chart" style="width:100%;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.06)">
+          <div class="note" style="margin-top:8px">
+            Legend:<span class="sw sw-teal"></span> Liquidity 89% •
+            <span class="sw sw-peach"></span> Community 4% •
+            <span class="sw sw-mustard"></span> Charity 3% •
+            <span class="sw sw-cocoa"></span> Ecosystem 4% •
+            <span class="sw sw-gray"></span> Team 0%
+          </div>
+        </div>
+        <div class="tok-grid">
+          <div class="tok-card"><h4>Total Supply</h4><p>1,000,000,000 $SCOZY</p></div>
+          <div class="tok-card"><h4>Liquidity</h4><p><b>89%</b> — locked in pools for trading stability.</p></div>
+          <div class="tok-card"><h4>Community Rewards</h4><p><b>4%</b> — airdrops, contests, loyalty perks, early staking boosts.</p></div>
+          <div class="tok-card"><h4>Ecosystem/Growth</h4><p><b>4%</b> — marketing, partnerships, listings, tooling.</p></div>
+          <div class="tok-card"><h4>Charity Reserve</h4><p><b>3%</b> — transparent donation wallet; causes voted by holders.</p></div>
+          <div class="tok-card"><h4>Team</h4><p><b>0% at launch</b> — community can vote later on contributor rewards via DAO.</p></div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:14px">🔎 Wallet addresses and locks will be published post-launch for full transparency.</p>
+    </div>
+  </section>
+
+  <!-- TREASURY -->
+  <section>
+    <div class="wrap grid-2">
+      <div>
+        <h2>Treasure Chest, Not a Black Box</h2>
+        <p>We treat the Growth and Charity slices like a public budget. Every spend is documented with:</p>
+        <ul class="list-clean">
+          <li>• Purpose → expected outcome (e.g., partner promo, listing support).</li>
+          <li>• Amount → tx link from the treasury wallet.</li>
+          <li>• Result → summary after the initiative ends.</li>
+        </ul>
+        <p class="note">This keeps $SCOZY accountable and compounding value for holders.</p>
+      </div>
+      <div class="card">
+        <h3>Simple Rules</h3>
+        <ul class="list-clean">
+          <li>• No surprise mints. No stealth team cuts.</li>
+          <li>• Spend from Growth fund requires a public rationale.</li>
+          <li>• Charity sends occur on a cadence with a vote.</li>
+          <li>• Any unallocated leftovers roll forward or return to community usage.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE BEAR -->
+  <section>
+    <div class="wrap grid-2" style="align-items:center">
+      <div>
+        <img src="images/person-behind-bear.png" alt="Cozy Bear working at a desk with a lamp and cocoa" style="width:100%;max-width:560px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.06)">
+      </div>
+      <div>
+        <h2>Meet the Bear</h2>
+        <p class="muted">Behind Cozy Bear is a <b>Security Analyst</b> with 3+ years in threat intelligence, vulnerability assessment, automation, and incident response, grounded by a bachelor’s in <b>Computer Science</b> with coursework in cybersecurity, cryptography, AI, databases, and software engineering.</p>
+        <p class="muted">Adaptable, reliable, and focused on long-term value, I’m building $SCOZY with the same values I apply in my professional work: <b>trust, resilience, and accountability</b>.</p>
+        <p class="note">The face stays hidden, but the skills — and dedication to this project — are real.</p>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <div class="badge">🛡 Security</div>
+          <div class="badge">🔒 Transparency</div>
+          <div class="badge">♻ Sustainability</div>
+          <div class="badge">🛋 Community</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARENCY HUB -->
+  <section id="transparency">
+    <div class="wrap">
+      <h2>Transparency Hub</h2>
+      <p class="muted">Live balances for $SCOZY’s public wallets. Updated from Solana RPC. (If you see a warning, the endpoint is rate-limited or blocked; data will retry/rotate.)</p>
+
+      <div class="wallets">
+        <!-- Liquidity (prefilled) -->
+        <div class="wallet-card" data-address="JAnQhdRBwERBL14ZAZGBZKQdPfUAKD23qYXYZtFCdYam">
+          <h3>Liquidity Wallet <span class="status">• checking…</span></h3>
+          <div class="row"><b>SOL:</b> <span class="sol">—</span></div>
+          <div class="row"><b>$SCOZY:</b> <span class="token">—</span></div>
+          <details class="txs"><summary>Recent Activity</summary><ul></ul></details>
+        </div>
+
+        <!-- Add your other public wallets here -->
+        <div class="wallet-card" data-address="PUT_COMMUNITY_REWARDS_WALLET">
+          <h3>Community Rewards <span class="status">• not set</span></h3>
+          <div class="row"><b>SOL:</b> <span class="sol">—</span></div>
+          <div class="row"><b>$SCOZY:</b> <span class="token">—</span></div>
+          <details class="txs"><summary>Recent Activity</summary><ul></ul></details>
+        </div>
+
+        <div class="wallet-card" data-address="PUT_GROWTH_WALLET">
+          <h3>Ecosystem & Growth <span class="status">• not set</span></h3>
+          <div class="row"><b>SOL:</b> <span class="sol">—</span></div>
+          <div class="row"><b>$SCOZY:</b> <span class="token">—</span></div>
+          <details class="txs"><summary>Recent Activity</summary><ul></ul></details>
+        </div>
+
+        <div class="wallet-card" data-address="PUT_CHARITY_WALLET">
+          <h3>Charity Reserve <span class="status">• not set</span></h3>
+          <div class="row"><b>SOL:</b> <span class="sol">—</span></div>
+          <div class="row"><b>$SCOZY:</b> <span class="token">—</span></div>
+          <details class="txs"><summary>Recent Activity</summary><ul></ul></details>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:12px">Balances for $SCOZY appear after we set the mint address below. Explorer links are provided for every transaction.</p>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section>
+    <div class="wrap cols-3">
+      <div class="card">
+        <h3>The Living Room</h3>
+        <p>General chat, memes, and retro vibes.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="https://t.me/SCOZYCOIN" target="_blank" rel="noopener">Open in Telegram</a>
+          <a class="btn secondary" href="https://web.telegram.org/k/#@SCOZYCOIN" target="_blank" rel="noopener">Open in Browser</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Cozy Crew on X</h3>
+        <p>Daily posts, polls, and culture.</p>
+        <a class="btn" href="https://x.com/coin_cozy" target="_blank" rel="noopener">Follow on X</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <p><b>Stay Cozy. Stay Together.</b></p>
+      <p class="note">Community project. Not financial advice. DYOR.</p>
+    </div>
+    <!-- Drop this just above </footer> if you want a quick inline check -->
+<div class="wrap" id="rpc-debug" style="padding:12px 0 36px">
+  <div class="card" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+    <b>RPC Status:</b>
+    <span id="rpc-status">checking…</span>
+    <span id="rpc-sol" class="note"></span>
+  </div>
+</div>
+<script>
+  (async()=>{
+    try{
+      const addr="JAnQhdRBwERBL14ZAZGBZKQdPfUAKD23qYXYZtFCdYam";
+      const res = await fetch("/.netlify/functions/solana", {
+        method:"POST", headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify({ jsonrpc:"2.0", id:1, method:"getBalance", params:[addr,{commitment:"confirmed"}] })
+      });
+      const j = await res.json();
+      if(j.error) throw new Error(j.error.message);
+      const sol=(j.result.value||0)/1_000_000_000;
+      document.getElementById("rpc-status").textContent="✅ live";
+      document.getElementById("rpc-sol").textContent=`${sol.toLocaleString(undefined,{maximumFractionDigits:4})} SOL`;
+    }catch(e){
+      document.getElementById("rpc-status").textContent="⚠️ rpc error";
+      document.getElementById("rpc-sol").textContent=e.message||"";
+      console.error(e);
+    }
+  })();
+</script>
+
+  </footer>
+
+  <!-- Live wallet balances -->
+  <script>
+  /* Client → Netlify Function → Provider (Helius/Alchemy/QuickNode) */
+  const RPC_FUNCTION = "/.netlify/functions/solana"; // relative path to your function
+  const SCOZY_MINT = "";     // set after mint; keep "" for now
+  const MAX_TX = 5;
+
+  async function rpc(method, params = []) {
+    const res = await fetch(RPC_FUNCTION, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params })
+    });
+    const json = await res.json().catch(() => ({ error: { message: "non-json response" }}));
+    if (json.error) throw new Error(json.error.message || "rpc error");
+    return json.result;
+  }
+
+  function plausiblePubkey(addr=""){ const b58=/^[1-9A-HJ-NP-Za-km-z]+$/; return b58.test(addr)&&addr.length>=32&&addr.length<=64; }
+
+  async function getSolBalance(pubkey) {
+    const lamports = await rpc("getBalance", [pubkey, { commitment: "confirmed" }]);
+    return (lamports?.value || 0) / 1_000_000_000;
+  }
+  async function getTokenBalance(owner, mint) {
+    if (!mint) return 0;
+    const res = await rpc("getTokenAccountsByOwner", [
+      owner, { mint }, { encoding: "jsonParsed", commitment: "confirmed" }
+    ]);
+    let total = 0;
+    for (const acc of (res?.value || [])) {
+      total += acc.account?.data?.parsed?.info?.tokenAmount?.uiAmount || 0;
+    }
+    return total;
+  }
+  async function getRecentSignatures(address, limit = MAX_TX) {
+    try { return await rpc("getSignaturesForAddress", [address, { limit }]) || []; }
+    catch { return []; }
+  }
+  function short(s){ return s.slice(0,6)+"…"+s.slice(-6); }
+
+  async function hydrateCard(card) {
+    const address = (card.dataset.address || "").trim();
+    const statusEl = card.querySelector(".status");
+    const solEl = card.querySelector(".sol");
+    const tokEl = card.querySelector(".token");
+    const txList = card.querySelector(".txs ul");
+
+    if (!address) { statusEl.textContent="• not set"; statusEl.className="status warn"; return; }
+    if (!plausiblePubkey(address)) { statusEl.textContent="❌ looks invalid"; statusEl.className="status err"; return; }
+
+    try {
+      const [sol, scozy, sigs] = await Promise.all([
+        getSolBalance(address),
+        getTokenBalance(address, SCOZY_MINT),
+        getRecentSignatures(address, MAX_TX)
+      ]);
+
+      solEl.textContent = sol.toLocaleString(undefined,{ maximumFractionDigits: 4 }) + " SOL";
+      tokEl.textContent = (scozy||0).toLocaleString(undefined,{ maximumFractionDigits: 2 }) + " $SCOZY";
+
+      txList.innerHTML = "";
+      (sigs||[]).forEach(s=>{
+        const li=document.createElement("li");
+        const a=document.createElement("a");
+        a.href = `https://solscan.io/tx/${s.signature}`;
+        a.target="_blank"; a.rel="noopener";
+        a.textContent = short(s.signature);
+        const ts = s.blockTime ? " — "+new Date(s.blockTime*1000).toLocaleString() : "";
+        li.append(a, ts);
+        txList.appendChild(li);
+      });
+
+      statusEl.textContent = "✅ live";
+      statusEl.className   = "status ok";
+    } catch(e){
+      console.error("Wallet card error:", e);
+      const msg = (e?.message||"").toLowerCase();
+      statusEl.textContent = "⚠️ rpc error";
+      if (msg.includes("timeout")) statusEl.textContent += ": timeout";
+      if (msg.includes("invalid")) statusEl.textContent += ": invalid address";
+      statusEl.className = "status warn";
+      solEl.textContent = "—"; tokEl.textContent = "—";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded",()=>{
+    document.querySelectorAll(".wallet-card").forEach(hydrateCard);
+  });
+</script>
+
+</body>
+</html>

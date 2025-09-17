@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SCOZY Wallet Debug</title>
+<style>
+  body{font:16px system-ui;background:#FAF3E0;color:#2F2F2F;padding:24px}
+  code{background:#fff;padding:2px 6px;border-radius:6px}
+  .ok{color:#17624E} .warn{color:#7A4B00} .err{color:#8A1E1E}
+</style>
+<h1>Wallet Debug</h1>
+<p>Address: <code id="addr">JAnQhdRBwERBL14ZAZGBZKQdPfUAKD23qYXYZtFCdYam</code></p>
+<p>Status: <span id="status">checking…</span></p>
+<p>SOL: <span id="sol">—</span></p>
+<script>
+  const RPCS = [
+    "https://api.mainnet-beta.solana.com",
+    "https://rpc.ankr.com/solana",
+    "https://solana.public-rpc.com"
+  ];
+  const ADDR = document.getElementById("addr").textContent;
+  const statusEl = document.getElementById("status");
+  const solEl = document.getElementById("sol");
+
+  function withTimeout(p, ms){ return Promise.race([p, new Promise((_,r)=>setTimeout(()=>r(new Error("timeout")), ms))]); }
+
+  async function getBalance(url){
+    const res = await withTimeout(fetch(url, {
+      method:"POST", headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({ jsonrpc:"2.0", id:1, method:"getBalance", params:[ADDR,{commitment:"confirmed"}] })
+    }), 8000);
+    const j = await res.json();
+    if (j.error) throw new Error(j.error.message||"rpc error");
+    return j.result.value/1_000_000_000;
+  }
+
+  (async ()=>{
+    let lastErr;
+    for (const url of RPCS) {
+      try {
+        const sol = await getBalance(url);
+        statusEl.textContent = "✅ live via " + url;
+        statusEl.className = "ok";
+        solEl.textContent = sol.toLocaleString(undefined,{maximumFractionDigits:4});
+        return;
+      } catch(e){ lastErr = e; }
+    }
+    statusEl.textContent = "⚠️ rpc error: " + (lastErr?.message||"unknown"); statusEl.className="warn";
+  })();
+</script>
